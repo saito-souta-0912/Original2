@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SerectController : MonoBehaviour
+public class FifthCollectSounder : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,4 +15,6 @@ public class SerectController : MonoBehaviour
     {
         
     }
+
+    
 }

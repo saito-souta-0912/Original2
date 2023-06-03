@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class OdaiController : MonoBehaviour
 {
@@ -116,7 +117,7 @@ public class OdaiController : MonoBehaviour
                 UnCollectSound();
                 if(playerHp <= 0)
                 {
-
+                    GameOverManager();
                 }
             }
 
@@ -175,7 +176,7 @@ public class OdaiController : MonoBehaviour
                 
                 if(playerHp <= 0)
                 {
-
+                    GameOverManager();
                 }
             }
 
@@ -229,7 +230,7 @@ public class OdaiController : MonoBehaviour
                 UnCollectSound();
                 if(playerHp <= 0)
                 {
-
+                    GameOverManager();
                 }
             }
 
@@ -287,7 +288,7 @@ public class OdaiController : MonoBehaviour
                 Debug.Log(playerHp);
                 if(playerHp <= 0)
                 {
-
+                    GameOverManager();
                 }
             }
 
@@ -301,7 +302,7 @@ public class OdaiController : MonoBehaviour
             Debug.Log(playerHp);
             if(playerHp <= 0)
                 {
-
+                    GameOverManager();
                 }
 
             UnCollectSound();
@@ -390,6 +391,14 @@ public class OdaiController : MonoBehaviour
    void UnCollectSound()
    {
        a.PlayOneShot(b3);
+   }
+
+   void GameOverManager()
+   {
+       if(collectNumber >= 25)
+       {
+           SceneManager.LoadScene("GameGreatScene");
+       }
    }
 }
 

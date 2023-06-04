@@ -17,4 +17,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GameGreatScene.unity
     guid: 0a09cc24bfe49834e96df2a810bb22a5
+  - enabled: 0
+    path: Assets/Ranking.unity
+    guid: 910e2fac27be25a4d8637d04c270260b
+  - enabled: 1
+    path: Assets/naichilab/unity-simple-ranking/Scenes/Ranking.unity
+    guid: 152244f5855414ac4a3874f14efa583c
+  - enabled: 1
+    path: Assets/GameMissScene.unity
+    guid: d8462992ecc64204e8ebd97aad447e85
+  - enabled: 1
+    path: Assets/GameGoodScene.unity
+    guid: a47d19445edd03a49a91f5ef5e72aed2
+  - enabled: 1
+    path: Assets/GameBadScene.unity
+    guid: 3e24dc36bcfa6364d9d1467ed655d23f
   m_configObjects: {}

@@ -20,6 +20,9 @@ public class OdaiController : MonoBehaviour
      [SerializeField]string[] colorString = {"#FF0000","#0000FF","#00FF00","#000000","#FFFF00"};
      int colorNumber = 0;
      public Text skipText;
+     public static int scoreRecordNumber = 0;
+     int titleScore = 0;
+     public Text scoreText;
 
      public Text timeCounterText;
      float timeCount;
@@ -49,6 +52,7 @@ public class OdaiController : MonoBehaviour
         OdaiChanger();
         timeCount = 7.0f;
         playerHp = 3;
+        scoreText.text = "Score:" + titleScore.ToString();
         //odaiNumber = Random.Range(0,5);
         //Text a = odai[odaiNumber];
         //colorNumber = Random.Range(0,5);
@@ -74,6 +78,8 @@ public class OdaiController : MonoBehaviour
                 ChoiceChanger();
                 changeRecorder++;
                 collectNumber++;
+                ScoreControll();
+
                 if(collectNumber % 5 ==0 && collectNumber != 0)
                 {
                      FifthCollectSound();
@@ -84,11 +90,7 @@ public class OdaiController : MonoBehaviour
                 }
 
                 
-                //if(collectNumber % 5 == 0 && collectNumber != 0)
-                //{
-                   // GameObject objectA = GameObject.FindGameObjectWithTag("FifthCollect");
-                   // objectA.SendMessage("FifthCollect");
-               // }
+               
                 if(changeRecorder <= 10)
                 {
                     timeCount = 7.0f;
@@ -117,7 +119,8 @@ public class OdaiController : MonoBehaviour
                 UnCollectSound();
                 if(playerHp <= 0)
                 {
-                    GameOverManager();
+                   timeCount　= 10000f;
+                    naichilab.RankingLoader.Instance.SendScoreAndShowRanking (scoreRecordNumber);
                 }
             }
 
@@ -136,6 +139,7 @@ public class OdaiController : MonoBehaviour
 
                 
                 collectNumber++;
+                ScoreControll();
                 if(collectNumber % 5 ==0 && collectNumber != 0)
                 {
                     FifthCollectSound();
@@ -176,7 +180,8 @@ public class OdaiController : MonoBehaviour
                 
                 if(playerHp <= 0)
                 {
-                    GameOverManager();
+                    timeCount　= 10000f;
+                    naichilab.RankingLoader.Instance.SendScoreAndShowRanking (scoreRecordNumber);
                 }
             }
 
@@ -193,6 +198,7 @@ public class OdaiController : MonoBehaviour
                 changeRecorder++;
                 
                 collectNumber++;
+                ScoreControll();
                 if(collectNumber % 5 ==0 && collectNumber != 0)
                 {
                      FifthCollectSound();
@@ -230,7 +236,8 @@ public class OdaiController : MonoBehaviour
                 UnCollectSound();
                 if(playerHp <= 0)
                 {
-                    GameOverManager();
+                    timeCount　= 10000f;
+                    naichilab.RankingLoader.Instance.SendScoreAndShowRanking (scoreRecordNumber);
                 }
             }
 
@@ -248,6 +255,8 @@ public class OdaiController : MonoBehaviour
                 changeRecorder++;
                 
                 collectNumber++;
+                ScoreControll();
+                
                 if(collectNumber % 5 ==0 && collectNumber != 0)
                 {
                     FifthCollectSound();
@@ -288,7 +297,8 @@ public class OdaiController : MonoBehaviour
                 Debug.Log(playerHp);
                 if(playerHp <= 0)
                 {
-                    GameOverManager();
+                    timeCount　= 10000f;
+                    naichilab.RankingLoader.Instance.SendScoreAndShowRanking (scoreRecordNumber);
                 }
             }
 
@@ -302,7 +312,8 @@ public class OdaiController : MonoBehaviour
             Debug.Log(playerHp);
             if(playerHp <= 0)
                 {
-                    GameOverManager();
+                    timeCount　= 10000f;
+                    naichilab.RankingLoader.Instance.SendScoreAndShowRanking (scoreRecordNumber);
                 }
 
             UnCollectSound();
@@ -393,12 +404,33 @@ public class OdaiController : MonoBehaviour
        a.PlayOneShot(b3);
    }
 
-   void GameOverManager()
+   
+
+   public void ScoreControll()
    {
-       if(collectNumber >= 25)
+       if(collectNumber <= 10)
        {
-           SceneManager.LoadScene("GameGreatScene");
+           scoreRecordNumber += 10 * collectNumber * (int)timeCount;
+           scoreText.text = "Score:" + scoreRecordNumber.ToString();
        }
+       else if(collectNumber <= 17)
+       {
+           scoreRecordNumber += 50 * collectNumber * (int)timeCount;
+           scoreText.text = "Score:" + scoreRecordNumber.ToString();
+       }
+       else if(collectNumber <= 22)
+       {
+           scoreRecordNumber += 500 * collectNumber * (int)timeCount;
+           scoreText.text = "Score:" + scoreRecordNumber.ToString();
+       }
+       else if(collectNumber <= 27)
+       {
+           scoreRecordNumber += 1000 * collectNumber * (int)timeCount;
+           scoreText.text = "Score:" + scoreRecordNumber.ToString();
+       }
+       
    }
+
+    
 }
 

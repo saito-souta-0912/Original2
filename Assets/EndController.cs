@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EndController : MonoBehaviour
 {
-     int a = OdaiController.scoreRecordNumber;
+     public static int a = OdaiController.scoreRecordNumber;
     // Start is called before the first frame update
     void Start()
     {

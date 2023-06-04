@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ReturnController : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class ReturnController : MonoBehaviour
 
     public void ReturnScene()
     {
+        OdaiController.scoreRecordNumber = 0;
         SceneManager.LoadScene("StartScene");
     }
 }

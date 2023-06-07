@@ -20,6 +20,6 @@ public class StartButtonControler : MonoBehaviour
 
     public void SceneChange()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("IntroScene");
     }
 }

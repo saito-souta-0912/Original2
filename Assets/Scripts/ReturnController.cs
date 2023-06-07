@@ -23,5 +23,6 @@ public class ReturnController : MonoBehaviour
     {
         OdaiController.scoreRecordNumber = 0;
         SceneManager.LoadScene("StartScene");
+        
     }
 }

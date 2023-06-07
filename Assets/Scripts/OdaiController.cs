@@ -13,6 +13,10 @@ public class OdaiController : MonoBehaviour
      public GameObject title;
      public GameObject UnCollectGameObject;
      public GameObject FifthCollectGameObject;
+     public Slider hpSlider;
+     public Text hpText;
+     
+
      int odaiNumber = 0;
      int choiceLeftNumber = 0;
      int choiceUpNumber = 0;
@@ -30,12 +34,14 @@ public class OdaiController : MonoBehaviour
      int playerHp;
      int collectNumber = 0;
 
+
      [SerializeField] private AudioSource a;//AudioSource型の変数aを宣言 使用するAudioSourceコンポーネントをアタッチ必要
 
      [SerializeField] private AudioClip b1;//AudioClip型の変数b1を宣言 使用するAudioClipをアタッチ必要
      [SerializeField] private AudioClip b2;//AudioClip型の変数b2を宣言 使用するAudioClipをアタッチ必要 
      [SerializeField] private AudioClip b3;//AudioClip型の変数b3を宣言 使用するAudioClipをアタッチ必要 
 
+     [SerializeField] private AudioClip c1;
 
      
      
@@ -48,11 +54,15 @@ public class OdaiController : MonoBehaviour
     {
         this.title.SetActive(false);
         skipText.gameObject.SetActive(true);
+        
         ChoiceChanger();
         OdaiChanger();
         timeCount = 7.0f;
         playerHp = 3;
+        hpSlider.value = 3;
+
         scoreText.text = "Score:" + titleScore.ToString();
+        QuestionSound();
         //odaiNumber = Random.Range(0,5);
         //Text a = odai[odaiNumber];
         //colorNumber = Random.Range(0,5);
@@ -111,11 +121,14 @@ public class OdaiController : MonoBehaviour
                 {
                     timeCount = 2.0f;
                 }
+
+                Invoke("QuestionSound",0.1f);
             }
             else
             {
                 playerHp--;
                 Debug.Log(playerHp);
+                hpSlider.value--;
                 UnCollectSound();
                 if(playerHp <= 0)
                 {
@@ -171,10 +184,12 @@ public class OdaiController : MonoBehaviour
                     timeCount = 2.0f;
                 }
 
+                Invoke("QuestionSound",0.1f);
             }
             else
             {
                 playerHp--;
+                hpSlider.value--;
                 Debug.Log(playerHp);
                 UnCollectSound();
                 
@@ -228,10 +243,13 @@ public class OdaiController : MonoBehaviour
                 {
                     timeCount = 2.0f;
                 }
+
+                Invoke("QuestionSound",0.1f);
             }
             else
             {
                 playerHp--;
+                hpSlider.value--;
                 Debug.Log(playerHp);
                 UnCollectSound();
                 if(playerHp <= 0)
@@ -287,6 +305,7 @@ public class OdaiController : MonoBehaviour
                     timeCount = 2.0f;
                 }
 
+                Invoke("QuestionSound",0.1f);
             }
             else
             {
@@ -294,6 +313,7 @@ public class OdaiController : MonoBehaviour
                 //UnCollectGameObject.SendMessage("UnCollectSound");
                 UnCollectSound();
                 playerHp--;
+                hpSlider.value--;
                 Debug.Log(playerHp);
                 if(playerHp <= 0)
                 {
@@ -319,6 +339,7 @@ public class OdaiController : MonoBehaviour
             UnCollectSound();
             OdaiChanger();
             ChoiceChanger();
+            Invoke("QuestionSound",0.1f);
             if(changeRecorder <= 10)
                 {
                     timeCount = 7.0f;
@@ -402,6 +423,11 @@ public class OdaiController : MonoBehaviour
    void UnCollectSound()
    {
        a.PlayOneShot(b3);
+   }
+
+   void QuestionSound()
+   {
+       a.PlayOneShot(c1);
    }
 
    

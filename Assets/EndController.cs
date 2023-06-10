@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class EndController : MonoBehaviour
 {
      
@@ -21,7 +22,7 @@ public class EndController : MonoBehaviour
 
     public void GameOverManager()
    {
-       if(OdaiController.scoreRecordNumber >= 300000)
+       if(OdaiController.scoreRecordNumber >= 1000000)
        {
 
            SceneManager.LoadScene("GameGreatScene");
@@ -29,12 +30,12 @@ public class EndController : MonoBehaviour
 
 
        }
-       else if(OdaiController.scoreRecordNumber >= 150000)
+       else if(OdaiController.scoreRecordNumber >= 500000)
        {
            SceneManager.LoadScene("GameGoodScene");
     
        }
-       else if(OdaiController.scoreRecordNumber >= 50000)
+       else if(OdaiController.scoreRecordNumber >= 100000)
        {
            SceneManager.LoadScene("GameBadScene");
       
@@ -50,4 +51,7 @@ public class EndController : MonoBehaviour
        }
    }
 }
+
+
+   
 

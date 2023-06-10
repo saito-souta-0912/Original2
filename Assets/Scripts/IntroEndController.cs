@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class IntroEndController : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -22,4 +23,7 @@ public class IntroEndController : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
     }
+
+
+   
 }

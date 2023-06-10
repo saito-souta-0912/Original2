@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class StartButtonControler : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -22,4 +23,8 @@ public class StartButtonControler : MonoBehaviour
     {
         SceneManager.LoadScene("IntroScene");
     }
+
+
+
+    
 }

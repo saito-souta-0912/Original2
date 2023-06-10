@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class OdaiController : MonoBehaviour
 {
      public Text[] odai;
@@ -70,6 +71,8 @@ public class OdaiController : MonoBehaviour
         //ColorUtility.TryParseHtmlString(colorString[colorNumber], out var tmpColor);
         //a.color = tmpColor;
         //a.gameObject.SetActive(true);
+
+        
         
     }
 
@@ -81,7 +84,7 @@ public class OdaiController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            Debug.Log("ç∂");
+            
             if(colorNumber == choiceLeftNumber)
             {
                 OdaiChanger();
@@ -143,7 +146,7 @@ public class OdaiController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Debug.Log("è„");
+            
             if(colorNumber == choiceUpNumber)
             {
                 OdaiChanger();
@@ -205,7 +208,7 @@ public class OdaiController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.RightArrow))
         {
-            Debug.Log("âE");
+            
             if(colorNumber == choiceRightNumber)
             {
                 OdaiChanger();
@@ -264,7 +267,7 @@ public class OdaiController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.DownArrow))
         {
-            Debug.Log("â∫");
+            
             
             if(colorNumber != choiceLeftNumber && colorNumber != choiceUpNumber && colorNumber != choiceRightNumber)
             {
@@ -327,8 +330,9 @@ public class OdaiController : MonoBehaviour
 
         if(timeCount <= 0.0f)
         {
-            Debug.Log("éûä‘êÿÇÍÅAéüÇÃñ‚ëËÇ÷");
+            
             playerHp--;
+            hpSlider.value--;
             Debug.Log(playerHp);
             if(playerHp <= 0)
                 {
@@ -454,8 +458,15 @@ public class OdaiController : MonoBehaviour
            scoreRecordNumber += 1000 * collectNumber * (int)timeCount;
            scoreText.text = "Score:" + scoreRecordNumber.ToString();
        }
+       else
+       {
+           scoreRecordNumber += 1500 * collectNumber * (int)timeCount;
+           scoreText.text = "Score:" + scoreRecordNumber.ToString();
+       }
        
    }
+
+   
 
     
 }

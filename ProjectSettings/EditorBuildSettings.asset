@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/StartScene.unity
     guid: e877e59dc28b10845af746779f27c776
@@ -22,7 +19,7 @@ EditorBuildSettings:
     guid: 0e26228065bf4384599237a6a08728cd
   - enabled: 0
     path: 
-    guid: 910e2fac27be25a4d8637d04c270260b
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/naichilab/unity-simple-ranking/Scenes/Ranking.unity
     guid: 152244f5855414ac4a3874f14efa583c

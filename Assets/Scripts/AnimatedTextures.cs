@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
 public class AnimatedTextures : MonoBehaviour
 {
-    public string Filename;
+    // public string Filename;
+    public TextAsset textAsset;
 
     private List<Texture2D> mFrames     = new List<Texture2D>();
     private List<float>     mFrameDelay = new List<float>();
@@ -14,14 +15,14 @@ public class AnimatedTextures : MonoBehaviour
 
     void Start()
     {
-        if( string.IsNullOrWhiteSpace( Filename ) )
+        /*if( string.IsNullOrWhiteSpace( Filename ) )
         {
             return;
         }
 
-        var path = Path.Combine( Application.streamingAssetsPath, Filename );
+        var path = Path.Combine( Application.streamingAssetsPath, Filename );*/
 
-        using( var decoder = new MG.GIF.Decoder( File.ReadAllBytes( path ) ) )
+        using( var decoder = new MG.GIF.Decoder(textAsset.bytes) )
         {
             var img = decoder.NextImage();
 

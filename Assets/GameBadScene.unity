@@ -344,6 +344,10 @@ PrefabInstance:
       propertyPath: Filename
       value: badanmicaa.gif
       objectReference: {fileID: 0}
+    - target: {fileID: 4347920545494086122, guid: 8a41e524a0197be41968dd4539ba129a, type: 3}
+      propertyPath: textAsset
+      value: 
+      objectReference: {fileID: 4900000, guid: 13999998a5d202b4ebf032989d969921, type: 3}
     - target: {fileID: 4347920545494086123, guid: 8a41e524a0197be41968dd4539ba129a, type: 3}
       propertyPath: m_Name
       value: Quad

@@ -2948,6 +2948,10 @@ PrefabInstance:
       propertyPath: Filename
       value: on-background-blue-hd-2-adobeexpress.gif
       objectReference: {fileID: 0}
+    - target: {fileID: 4347920545494086122, guid: 8a41e524a0197be41968dd4539ba129a, type: 3}
+      propertyPath: textAsset
+      value: 
+      objectReference: {fileID: 4900000, guid: 7ffb11e0a7a0c75478872aaa4dea0797, type: 3}
     - target: {fileID: 4347920545494086123, guid: 8a41e524a0197be41968dd4539ba129a, type: 3}
       propertyPath: m_Name
       value: Quad

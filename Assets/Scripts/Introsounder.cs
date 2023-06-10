@@ -14,6 +14,7 @@ public class Introsounder : MonoBehaviour
     public AudioSource introAnmica;
     
     byte[] anmicaImageByte;
+    
     // Start is called before the first frame update
     void Start()
     {
